@@ -1,0 +1,29 @@
+const asyncHandler = require('express-async-handler')
+
+const getCustomers = asyncHandler(async (req,res) => {
+    res.status(200).json({ message : 'Api get customers'})
+})
+
+const setCustomer = asyncHandler(async (req,res) => { 
+    if(!req.body.username){
+        res.status(400).json({
+            message : 'Username field is required'
+        })
+    }
+    res.status(200).json({ message : 'Set customers'})
+})
+
+const putCustomer = asyncHandler(async (req,res) => { 
+    res.status(200).json({ message : `Update customer ${req.params.id}`})
+})
+
+const deleteCustomer = asyncHandler(async (req,res) => { 
+    res.status(200).json({ message : `Delete customer ${req.params.id}`})
+})
+
+module.exports = {
+    getCustomers,
+    setCustomer,
+    putCustomer,
+    deleteCustomer
+}

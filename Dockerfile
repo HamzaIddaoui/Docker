@@ -1,7 +1,7 @@
 FROM node:16
 
-RUN mkdir -p Users\Electronic Store\Desktop\nodeDockerApp
-WORKDIR Users\Electronic Store\Desktop\nodeDockerApp
+RUN mkdir -p Users\Electronic Store\Desktop\Docker\Dockergit
+WORKDIR Users\Electronic Store\Desktop\Docker\Dockergit
 COPY package.json . 
 RUN npm install 
 COPY ./ . 
