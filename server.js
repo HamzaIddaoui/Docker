@@ -3,6 +3,10 @@ const app = express()
 const port = process.env.port || 3030
 const path = require('path')
 
+const connectDB = require('./config/db')
+
+connectDB()
+
 app.use(express.json())
 app.use(express.urlencoded({extended : false}))
 

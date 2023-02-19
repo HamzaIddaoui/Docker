@@ -1,7 +1,11 @@
 const asyncHandler = require('express-async-handler')
 
+const Customer = require('../model/customerModel')
+
+
 const getCustomers = asyncHandler(async (req,res) => {
-    res.status(200).json({ message : 'Api get customers'})
+    const Customers = await Customer.find()
+    res.status(200).json(Customers)
 })
 
 const setCustomer = asyncHandler(async (req,res) => { 
